@@ -15,7 +15,7 @@ First, find subdomains associated with Firebase under `*.firebaseio.com`. You ca
 - Assetfinder
 - FOFA, Shodan, ZoomEye (search engines)
 
-Example queries:
+Example FOFA, Shodan, ZoomEye queries :
 
 ```
 FOFA Query: "domain=firebaseio.com"
@@ -23,7 +23,7 @@ Shodan Query: "http.title:Firebase"
 ZoomEye Query: "site:firebaseio.com"
 ```
 
-### 🔍 Automated Command to Find Live and Accessible Firebase Subdomains
+### 🛠 Step 2: Testing if Firebase is Accessible Automated Command to Find Live and Accessible Firebase Subdomains
 
 ```bash
 subfinder -d firebaseio.com -t 50 | awk '{print $0"/.json"}' | httpx -status-code -mc 200
@@ -40,18 +40,6 @@ This command will:
 2. Filter only live subdomains responding with HTTP `200` using `httpx`.
 3. Check if the Firebase database is accessible by sending a `GET` request to `/.json`.
 4. Print only the domains that return `200 OK`.
-
----
-
-## 🛠 Step 2: Testing if Firebase is Accessible
-
-Once you have a subdomain, check if it's publicly accessible by sending a GET request using `curl`:
-
-```bash
-curl -X GET https://<subdomain>.firebaseio.com/.json -H "Content-Type: application/json" -i
-```
-
-If the response includes `200 OK` and returns JSON data, the Firebase database is misconfigured and allows public read access.
 
 ---
 
