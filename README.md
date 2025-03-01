@@ -23,13 +23,17 @@ Shodan Query: "http.title:Firebase"
 ZoomEye Query: "site:firebaseio.com"
 ```
 
-### 🔍 Automated Command to Find Live Firebase Subdomains
+### 🔍 Automated Command to Find Live and Accessible Firebase Subdomains
 
 ```bash
-subfinder -d firebaseio.com | httpx -mc 200
+subfinder -d firebaseio.com | httpx -mc 200 -silent | xargs -I {} curl -s -o /dev/null -w "%{http_code} %{url_effective}\n" {}/.json | grep "200"
 ```
 
-This will find Firebase subdomains and filter only those that respond with HTTP status `200 OK`.
+This command will:
+1. Find Firebase subdomains using `subfinder`.
+2. Filter only live subdomains responding with HTTP `200` using `httpx`.
+3. Check if the Firebase database is accessible by sending a `GET` request to `/.json`.
+4. Print only the domains that return `200 OK`.
 
 ---
 
@@ -117,4 +121,3 @@ This guide is for **educational purposes only**. Unauthorized access to Firebase
 ## 🤝 Conclusion
 
 Misconfigured Firebase databases pose serious security risks. By following the steps above, you can identify vulnerabilities and take corrective actions to secure Firebase applications. Happy hacking responsibly! 🛡
-
