@@ -63,7 +63,7 @@ Example Firebase API key: `AIzaSyDluKZPdsuwxICZvjKi43I7KLLgAHGtxxx`
 
 ### 🔍 Testing API Key for Authentication
 
-Use a token generator like [subhashis360.github.io/idtokengenarate](https://subhashis360.github.io/idtokengenarate):
+Use a token generator like [subhashis360.github.io/idtokengenarate](https://subhashis360.github.io/idtokengenarate){:target="_blank"}:
 
 1. Paste the API key.
 2. Click **Sign Up**.
