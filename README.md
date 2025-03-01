@@ -63,7 +63,7 @@ If the request is successful and response is "null" , the Firebase database is d
 
 ---
 
-## 🔑 Step 4: Finding Firebase API Keys
+## 🔑 Step 4: Find & Exploit Firebase API Keys
 
 Another method to test Firebase security is by searching for Firebase API keys. You can look for keys in:
 
