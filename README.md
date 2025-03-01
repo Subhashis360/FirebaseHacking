@@ -29,7 +29,7 @@ ZoomEye Query: "site:firebaseio.com"
 subfinder -d firebaseio.com -t 50 | awk '{print $0"/.json"}' | httpx -status-code -mc 200
 ```
 
-or directly
+or directly to check one
 
 ```bash
 echo https://<subdomain>.firebaseio.com | awk '{print $0"/.json"}' | httpx -status-code -mc 200
