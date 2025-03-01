@@ -59,7 +59,7 @@ If the request is successful and data is written and return {"name":"-OKELb6Zxxx
 curl -X DELETE https://<subdomain>.firebaseio.com/-OKELb6ZxxxxDEiDm7W.json
 ```
 
-If the request is successful and response is "null" , the Firebase database is deleted.
+If the request is successful and response is "null" , the Firebase database Poc is deleted.
 
 ---
 
