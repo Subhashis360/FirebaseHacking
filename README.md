@@ -26,7 +26,13 @@ ZoomEye Query: "site:firebaseio.com"
 ### 🔍 Automated Command to Find Live and Accessible Firebase Subdomains
 
 ```bash
-subfinder -d firebaseio.com | httpx -mc 200 -silent | xargs -I {} curl -s -o /dev/null -w "%{http_code} %{url_effective}\n" {}/.json | grep "200"
+subfinder -d firebaseio.com -t 50 | awk '{print $0"/.json"}' | httpx -status-code -mc 200
+```
+
+or directly
+
+```bash
+echo https://<subdomain>.firebaseio.com | awk '{print $0"/.json"}' | httpx -status-code -mc 200
 ```
 
 This command will:
