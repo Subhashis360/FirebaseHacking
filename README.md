@@ -10,7 +10,7 @@ Firebase is a cloud-based platform that provides backend services such as databa
 
 First, find subdomains associated with Firebase under `*.firebaseio.com`. You can use tools like:
 
-- Sublist3r
+- Subfinder
 - Amass
 - Assetfinder
 - FOFA, Shodan, ZoomEye (search engines)
@@ -22,6 +22,14 @@ FOFA Query: "domain=firebaseio.com"
 Shodan Query: "http.title:Firebase"
 ZoomEye Query: "site:firebaseio.com"
 ```
+
+### 🔍 Automated Command to Find Live Firebase Subdomains
+
+```bash
+subfinder -d firebaseio.com | httpx -mc 200
+```
+
+This will find Firebase subdomains and filter only those that respond with HTTP status `200 OK`.
 
 ---
 
